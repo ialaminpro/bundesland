@@ -1,0 +1,36 @@
+{
+    "name": "ialpro/bundesland",
+    "description": "Lookup German Bundesland (state) by ZIP (and optional city) via Zippopotam.us.",
+    "keywords": ["laravel", "germany", "zip", "bundesland"],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ialpro\\Bundesland\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ialpro\\Bundesland\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.2",
+        "illuminate/support": "^11.0",
+        "illuminate/cache": "^11.0",
+        "illuminate/http": "^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ialpro\\Bundesland\\BundeslandServiceProvider"
+            ],
+            "aliases": {
+                "ZipLookup": "Ialpro\\Bundesland\\Facades\\ZipLookup"
+            }
+        }
+    }
+}
